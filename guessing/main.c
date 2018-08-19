@@ -6,12 +6,12 @@
 int takeGuess(int);
 
 int main() {
-  int range = 20;
-  int guess = takeGuess(range);
-  int oldDifference = range + 1;
+  const int RANGE = 20;
+  int guess = takeGuess(RANGE);
+  int oldDifference = RANGE + 1;
 
   srand(time(NULL));
-  int number = rand() % range;
+  int number = rand() % RANGE;
 
   while (guess != number) {
     int newDifference = abs(number - guess);
@@ -22,7 +22,7 @@ int main() {
     }
     oldDifference = newDifference;
 
-    guess = takeGuess(range);
+    guess = takeGuess(RANGE);
   }
 
   printf("You guessed correctly!\n");
